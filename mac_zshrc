@@ -1,0 +1,13 @@
+eval "$(starship init zsh)"
+source <(fzf --zsh)
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+alias ls='eza -la'
+
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+  --color=fg:#d0d0d0,fg+:#d0d0d0,bg:-1,bg+:-1
+  --color=hl:#875fb0,hl+:#cf5eff,info:#afaf87,marker:#f7ff5e
+  --color=prompt:#d3d600,spinner:#b26ff4,pointer:#c391f5,header:#87afaf
+  --color=border:#262626,label:#aeaeae,query:#d9d9d9
+  --border="rounded" --border-label="" --preview-window="border-rounded" --prompt="> "
+  --marker=">" --pointer="◆" --separator="─" --scrollbar="│"'
