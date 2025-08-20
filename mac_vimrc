@@ -1,0 +1,61 @@
+let mapleader=" "
+
+syntax on
+set number
+set nowrap
+set incsearch
+set nocompatible
+set hidden
+set noshowmode "for supressing mode
+set noru " for no ruler
+set encoding=utf-8
+set fillchars+=vert:│ " fills the vertical split with | character
+hi VertSplit ctermbg=NONE guibg=NONE cterm=NONE "clears vsplit line
+hi Split ctermbg=NONE guibg=NONE cterm=NONE "clears split line
+
+call plug#begin()
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'lambdalisue/battery.vim'
+Plug 'vim-ctrlspace/vim-ctrlspace'
+call plug#end()
+
+" normal mode remapping
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>e :Ex<CR>
+nnoremap <Leader>t :term<CR>
+nnoremap <Leader>v :vsplit<CR>
+nnoremap <Leader>d :split<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>f :Rg<CR>
+nnoremap <leader>s :source<CR>
+nnoremap <C-p> :Files<CR>
+
+" split move remapping
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" ctrlspace options
+let g:CtrlSpaceDefaultMappingKey = "<space>m"
+
+" airline options
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline#extensions#battery#enabled = 1
+let g:airline#extensions#ctrlspace#enabled = 1
+let g:airline_skip_empty_sections = 1
+let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v']) 
+let g:airline_extensions = ['branch', 'tabline']
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
+let g:airline_theme='violet'
